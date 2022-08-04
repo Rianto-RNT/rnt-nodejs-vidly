@@ -83,7 +83,6 @@ $ npm start
 ## Development Process
 
 - Node Module System
-
   - Global object
   - Modules
   - Creating a Module
@@ -91,8 +90,9 @@ $ npm start
   - Module Wrapper Function
   - Module Path (lighlight)
     - Path
-  - OS Module
+  - OS module
     - Operating system
+  - File system module
     - File system
     - Events
     - Http
@@ -103,6 +103,7 @@ $ npm start
 - [jshint](https://jshint.com/) - This is JSHint, a tool that helps to detect errors and potential problems in your JavaScript code.
 - [nodejs-path](https://nodejs.org/dist/latest-v16.x/docs/api/path.html)
 - [nodejs-os](https://nodejs.org/dist/latest-v16.x/docs/api/os.html)
+- [nodejs-file-system](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html)
 - [rnt-example-point](https://github.com)
 
 ## Future Updates
