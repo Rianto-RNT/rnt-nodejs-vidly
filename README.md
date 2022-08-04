@@ -10,6 +10,7 @@
  <a href="#deployed-version">Demo</a> •
   <a href="#api-usage">API Usage</a> •
   <a href="#deployment">Deployment</a> •
+  <a href="#development-process">Development Process</a> •
   <a href="#installation">Installation</a> •
   <a href="#build-with">Build With</a> •
   <a href="#npm-packages">NPM Packages</a> •
@@ -94,7 +95,10 @@ $ npm start
     - Operating system
   - File system module
     - File system
+  - Events module
     - Events
+    - Event Arguments
+  - Http module
     - Http
     - Stream
 
@@ -104,6 +108,8 @@ $ npm start
 - [nodejs-path](https://nodejs.org/dist/latest-v16.x/docs/api/path.html)
 - [nodejs-os](https://nodejs.org/dist/latest-v16.x/docs/api/os.html)
 - [nodejs-file-system](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html)
+- [nodejs-events](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html)
+- [nodejs-http](https://nodejs.org/dist/latest-v16.x/docs/api/http.html)
 - [rnt-example-point](https://github.com)
 
 ## Future Updates

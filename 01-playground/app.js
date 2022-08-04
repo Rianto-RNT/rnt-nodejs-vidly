@@ -47,22 +47,61 @@ console.log(pathObj);
 // 4) FILE SYSTEM
 /**
 
+ const fs = require("fs");
+ 
+ const files = fs.readdirSync("./");
+ console.log(files);
+ // result fs >>>  [ 'app.js', 'logger.js', 'playground.js' ]
+ 
+ fs.readdir("$", function (err, files) {
+   if (err) console.log("Error ===>>>", err);
+   else console.log("Result ===>>>", files);
+ });
+ 
+ // Result fs with error status >>>
+ // Error ===>>> [Error: ENOENT: no such file or directory, scandir 'D:\Programming\rnt-node-vidly-movie-api\01-playground\$'] {
+ //     errno: -4058,
+ //     code: 'ENOENT',
+ //     syscall: 'scandir',
+ //     path: 'D:\\Programming\\rnt-node-vidly-movie-api\\01-playground\\$'
+ //   }
   */
-const fs = require("fs");
 
-const files = fs.readdirSync("./");
-console.log(files);
-// result fs >>>  [ 'app.js', 'logger.js', 'playground.js' ]
+/**
+// 5) EVENTS
+  
+const EventEmitter = require("events"); // class
 
-fs.readdir("$", function (err, files) {
-  if (err) console.log("Error ===>>>", err);
-  else console.log("Result ===>>>", files);
+// Raise: logging (data: message)
+const Logger = require("./logger");
+const logger = new Logger();
+
+// Register a listener
+logger.on("messageLogged", (arg) => {
+  console.log("Listener Called ===>>>", arg); // result >>> Listener Called ===>>> { id: 1, url: 'http://rnt-creative.com' }
 });
 
-// Result fs with error status >>>
-// Error ===>>> [Error: ENOENT: no such file or directory, scandir 'D:\Programming\rnt-node-vidly-movie-api\01-playground\$'] {
-//     errno: -4058,
-//     code: 'ENOENT',
-//     syscall: 'scandir',
-//     path: 'D:\\Programming\\rnt-node-vidly-movie-api\\01-playground\\$'
-//   }
+logger.log("message");
+*/
+
+/**
+ // 6) HTTP
+
+*/
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.write("rnt creative");
+    res.end();
+  }
+
+  if (req.url === "/api/rnt") {
+    res.write(JSON.stringify([1, 2, 3]));
+    res.end();
+  }
+});
+
+server.listen(3000);
+
+console.log("Listening on port 3000...");
