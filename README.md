@@ -105,10 +105,13 @@ $ npm start
 - [Express.js](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
 - [MongoDB](https://www.mongodb.com/) - Cloud-hosted NoSQL database service
 - [VSCode](https://code.visualstudio.com) - Free source-code editor made by Microsoft
+- [NPM](https://www.npmjs.com/) - Software Package Manager and Installer (Node.js)
 - [Git](https://git-scm.com) - Open source distributed version control system
 
 ## NPM Packages
 
+- [underscore](https://github.com/jashkenas/underscore)
+- [mongoose](https://github.com/Automattic/mongoose)
 - [rnt-example-point](https://github.com/)
 
 ## Development Process
@@ -131,7 +134,106 @@ $ npm start
   - Http module
     - Http
     - Stream
-- Node Packages Manager
+- Node Packages Manager (NPM)
+
+  - Install NPM on machine using terminal
+
+Create Package.json file
+
+```sh
+$ npm init
+```
+
+or
+
+```sh
+$ npm init --yes or npm init -y
+```
+
+Installing a node package
+
+```sh
+$ npm i <rnt-package-name> or npm install <rnt-package-name>
+```
+
+- Using a Package
+- Package dependencies
+- Npm packages and source control
+
+```sh
+$ npm i
+or
+$ npm install
+```
+
+```sh
+$ git init
+$ git status
+$ git add .
+$ git commit -m "<rnt-commit-message>"
+```
+
+- Semantic versioning (SemVer)
+  - Patch >>> use for bugs fixing then increase patch version (6.5.1 to 6.5.2)
+  - Minor >>> Adding new features without break an existing APIs then increase the Minor version (6.5.1 to 6.6.0)
+  - Major >>> If potentialy break the existing application depend upon version of application then increase the Major version (6.5.1 to 7.0.0)
+
+```sh
+  "dependencies": {
+    "mongoose": "^6.5.1", // Major.Minor.Patch
+    "underscore": "^1.13.4" // Major.Minor.Patch
+  }
+```
+
+- Listing the installed Packages
+
+```sh
+$ npm list
+or
+$ npm list --depth=0
+```
+
+- Viewing Registry info for a package
+
+```sh
+$ npm view <rnt-package-name>
+or
+$ npm view <rnt-package-name> dependencies
+$ npm view <rnt-package-name> versions
+```
+
+- Installing a specific version of a package
+
+```sh
+$ npm i <rnt-packages-name>@<rnt-packages-version>
+// example: npm i mongoose@2.4.2 >>> downgrade or upgrade package version
+```
+
+- Updating local packages
+
+```sh
+$ npm outdated
+example:
+result >>>
+Package     Current  Wanted  Latest  Location                 Depended by
+underscore    1.4.0  1.13.4  1.13.4  node_modules/underscore  02-npm-demo
+
+$ npm update
+```
+
+```sh
+// update to latest version of packages
+$ npm i -g npm-check-updates
+$ npm-check-updates
+or
+$ ncu -u
+// to install new versions. after update and run:
+$ npm install
+or
+$ npm i
+// check any outdated package again
+$ npm outdated
+```
 
 ## Articles
 
@@ -141,6 +243,8 @@ $ npm start
 - [nodejs-file-system](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html)
 - [nodejs-events](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html)
 - [nodejs-http](https://nodejs.org/dist/latest-v16.x/docs/api/http.html)
+- [underscore-js-contains](https://underscorejs.org/#containsl)
+- [about-semantic-versioning](https://docs.npmjs.com/about-semantic-versioning)
 - [rnt-example-point](https://github.com)
 
 ## Future Updates

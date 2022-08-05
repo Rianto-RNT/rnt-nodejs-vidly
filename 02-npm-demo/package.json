@@ -1,0 +1,29 @@
+{
+  "name": "02-npm-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rianto-RNT/rnt-nodejs-vidly.git"
+  },
+  "keywords": [
+    "node",
+    "packages",
+    "manager",
+    "node.js"
+  ],
+  "author": "Rianto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rianto-RNT/rnt-nodejs-vidly/issues"
+  },
+  "homepage": "https://github.com/Rianto-RNT/rnt-nodejs-vidly#readme",
+  "dependencies": {
+    "mongoose": "^6.5.1",
+    "underscore": "^1.13.4"
+  }
+}
