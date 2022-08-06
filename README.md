@@ -323,9 +323,26 @@ $ npm publish
 ```
 
 - Publish result
-  [![](rnt-example-image-url)](rnt-example-image-link)
+  [![](https://github.com/Rianto-RNT/rnt-nodejs-vidly/blob/main/00-documentation-assets/images-file/publish-new-minor-version-03-rnt-lib.png)](https://github.com/Rianto-RNT/rnt-nodejs-vidly)
 
-### 4) rnt-example-point
+### 4) Building RESTful APIs using Express
+
+- Introduction
+- RESTful services (Representational State Transfer)
+- Introducing Express
+- Build simple web server
+- Nodemon - implementing to app
+- Environtment variable (ENV)
+  - Setup PORT
+- Route Parameters
+  - Query string
+- Handling HTTP GET requests
+  - data response
+  - error response
+- Handling HTTP POST requests
+- Calling endpoints using postman
+
+### number) rnt-example-point
 
 ## Articles
 
@@ -337,6 +354,7 @@ $ npm publish
 - [nodejs-http](https://nodejs.org/dist/latest-v16.x/docs/api/http.html)
 - [underscore-js-contains](https://underscorejs.org/#containsl)
 - [about-semantic-versioning](https://docs.npmjs.com/about-semantic-versioning)
+- [express-api-reference-request](https://expressjs.com/en/4x/api.html#req)
 - [rnt-example-point](https://github.com)
 
 ## Future Updates
