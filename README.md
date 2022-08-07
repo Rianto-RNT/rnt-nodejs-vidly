@@ -63,6 +63,7 @@ $ npm start
 - [Node.js](https://nodejs.org/en) - JS runtime environment
 - [Express.js](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
 - [MongoDB](https://www.mongodb.com/) - Cloud-hosted NoSQL database service
+- [Postman](https://www.getpostman.com/) - API testing
 - [VSCode](https://code.visualstudio.com) - Free source-code editor made by Microsoft
 - [NPM](https://www.npmjs.com/) - Software Package Manager and Installer (Node.js)
 - [Git](https://git-scm.com) - Open source distributed version control system
@@ -71,6 +72,9 @@ $ npm start
 
 - [underscore](https://github.com/jashkenas/underscore)
 - [mongoose](https://github.com/Automattic/mongoose)
+- [nodemon](https://github.com/remy/nodemon)
+- [prettier](https://github.com/prettier/prettier)
+- [joi](https://github.com/sideway/joi)
 - [rnt-example-point](https://github.com/)
 
 ## Development Process
@@ -323,7 +327,7 @@ $ npm publish
 ```
 
 - Publish result
-  [![](https://github.com/Rianto-RNT/rnt-nodejs-vidly/blob/main/00-documentation-assets/images-file/publish-new-minor-version-03-rnt-lib.png)](https://github.com/Rianto-RNT/rnt-nodejs-vidly)
+- [![](https://github.com/Rianto-RNT/rnt-nodejs-vidly/blob/main/00-documentation-assets/images-file/publish-new-minor-version-03-rnt-lib.png)](https://github.com/Rianto-RNT/rnt-nodejs-vidly)
 
 ### 4) Building RESTful APIs using Express
 
@@ -341,6 +345,7 @@ $ npm publish
   - error response
 - Handling HTTP POST requests
 - Calling endpoints using postman
+- Input validation
 
 ### number) rnt-example-point
 
