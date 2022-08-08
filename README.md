@@ -346,6 +346,20 @@ $ npm publish
 - Handling HTTP POST requests
 - Calling endpoints using postman
 - Input validation
+- Handling HTTP PUT requests
+- Handling HTTP DELETE requests
+
+### 6) Vidly RESTful API Application
+
+- Setup application
+
+```sh
+$ mkdir <rnt-vidly-directory>
+$ cd <rnt-vidly-directory>
+$ npm init / npm init -y
+$ npm i express joi@13.1.0
+$ touch server.js
+```
 
 ### number) rnt-example-point
 
