@@ -75,6 +75,7 @@ $ npm start
 - [nodemon](https://github.com/remy/nodemon)
 - [prettier](https://github.com/prettier/prettier)
 - [joi](https://github.com/sideway/joi)
+- [dotenv](https://github.com/motdotla/dotenv)
 - [rnt-example-point](https://github.com/)
 
 ## Development Process
