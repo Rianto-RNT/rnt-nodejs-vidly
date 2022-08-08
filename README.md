@@ -82,17 +82,17 @@ $ npm start
 ### 1) Getting Started
 
 - Node is a runtime environment for executing JS code.
-- Essentially, Node is a C++ program that embeds Chrome’s v8 engine, the fastest JS engine in the world.
-- We use Node to build fast and scalable networking applications. It’s a perfect choice for building RESTful services.
+- Essentially, Node is a C++ program that embeds Chrome's v8 engine, the fastest JS engine in the world.
+- We use Node to build fast and scalable networking applications. It's a perfect choice for building RESTful services.
 - Node applications are single-threaded. That means a single thread is used to serve all clients.
-- Node applications are asynchronous or non-blocking by default. That means when the application involves I/O operations (eg accessing the ﬁle system or the network), the thread doesn’t wait (or block) for the result of the operation. It is released to serve other clients.
+- Node applications are asynchronous or non-blocking by default. That means when the application involves I/O operations (eg accessing the ﬁle system or the network), the thread doesn't wait (or block) for the result of the operation. It is released to serve other clients.
 - This architecture makes Node ideal for building I/O-intensive applications.
 - You should avoid using Node for CPU-intensive applications, such as a video encoding service. Because while executing these operations, other clients have to wait for the single thread to ﬁnish its job and be ready to serve them.
-- In Node, we don’t have browser environment objects such as window or the document object. Instead, we have other objects that are not available in browsers, such as objects for working with the ﬁle system, network, operating system, etc.
+- In Node, we don't have browser environment objects such as window or the document object. Instead, we have other objects that are not available in browsers, such as objects for working with the ﬁle system, network, operating system, etc.
 
 ### 2) Node Module System (Node Core)
 
-- We don’t have the window object in Node.
+- We don't have the window object in Node.
 - The global object in Node is “global”.
 - Unlike browser applications, variables we deﬁne are not added to the “global”object.
 - Every ﬁle in a Node application is a module. Node automatically wraps the code in each ﬁle with an IIFE (Immediately-invoked Function Expression) to create scope. So, variables and functions deﬁned in one ﬁle are only scoped to that ﬁle and not visible to other ﬁles unless explicitly exported.
@@ -107,7 +107,7 @@ module.exports:
 - To load a module, use the require function. This function returns the module.exports object exported from the target module:
 
 ```sh
-const logger = require(‘./logger’);
+const logger = require('./logger');
 ```
 
 - Node has a few built-in modules that enable us to work with the ﬁle system, path objects, network, operating system, etc.
@@ -348,6 +348,85 @@ $ npm publish
 - Input validation
 - Handling HTTP PUT requests
 - Handling HTTP DELETE requests
+- RECAP
+- REST deﬁnes a set of conventions for creating HTTP services:
+- POST: to create a resource
+- PUT: to update it
+- GET: to read it
+- DELETE: to delete it
+- Express is a simple, minimalistic and lightweight framework for building web servers.
+
+```sh
+# // Build a web server
+const express = require('express');
+const app = express();
+```
+
+```sh
+# // Creating a course
+app.post('/api/courses', (req, res) => {
+# // Create the course and return the course object
+  res.send(course);
+```
+
+});
+
+```sh
+# // Getting all the courses
+app.get('/api/courses', (req, res) => {
+# // To read query string parameters (?sortBy=name)
+  const sortBy = req.query.sortBy;
+
+# // Return the courses
+  res.send(courses);
+});
+```
+
+```sh
+#// Getting a single course
+app.get('/api/courses/:id', (req, res) => {
+  const courseId = req.params.id;
+
+# // Lookup the course
+# // If not found, return 404
+  res.status(404).send('Course not found.');
+
+# // Else, return the course object
+  res.send(course);
+});
+```
+
+```sh
+#// Updating a course
+app.put(‘/api/courses/:id’, (req, res) => {
+# // If course not found, return 404, otherwise update it
+# // and return the updated object.
+});
+```
+
+```sh
+# // Deleting a course
+app.delete(‘/api/courses/:id’, (req, res) => {
+# // If course not found, return 404, otherwise delete it
+# // and return the deleted object.
+});
+```
+
+```sh
+# // Listen on port 3000
+app.listen(3000, () => console.log(‘Listening…’));
+```
+
+- We use Nodemon to watch for changes in ﬁles and automatically restart the node process.
+- We can use environment variables to store various settings for an application. To read an environment variable, we use process.env.
+
+```sh
+# // Reading the port from an environment variable
+const port = process.env.PORT || 3000;
+app.listen(port);
+```
+
+- You should never trust data sent by the client. Always validate! Use Joi package to perform input validation.
 
 ### 6) Vidly RESTful API Application
 
