@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-const rntArrays = [
+const courses = [
   { id: 1, name: 'tech' },
   { id: 2, name: 'software' },
   { id: 3, name: 'design' },
@@ -14,37 +14,68 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/api/rnt', (req, res) => {
-  res.send(rntArrays);
+app.get('/api/courses', (req, res) => {
+  res.send(courses);
 });
 
-app.post('/api/rnt', (req, res) => {
+app.post('/api/courses', (req, res) => {
+  const { error } = validateCourses(req.body);
+
+  if (error) return res.status(400).send(result.error.details[0].message);
+
+  const course = {
+    id: courses.length + 1,
+    name: req.body.name,
+  };
+
+  courses.push(course);
+  res.send(course);
+});
+
+app.put('/api/courses/:id', (req, res) => {
+  // Look up the course
+  const course = courses.find((c) => c.id === parseInt(req.params.id));
+  // if not existing, return 404
+  if (!course)
+    return res.status(404).send('The Object with the givent ID wad not found');
+
+  // if invalid, return 400 = bad request
+  const { error } = validateCourses(req.body);
+  if (error) return res.status(400).send(result.error.details[0].message);
+
+  // Update couse
+  course.name = req.body.name;
+  // Return the updated course
+  res.send(course);
+});
+
+function validateCourses(course) {
+  // validate
   const schema = {
     name: Joi.string().min(3).required(),
   };
 
-  const result = Joi.validate(req.body, schema);
-  if (result.error) {
-    res.status(400).send(result.error.details[0].message);
-    return;
-  }
+  return Joi.validate(course, schema);
+}
 
-  const rnt = {
-    id: rntArrays.length + 1,
-    name: req.body.name,
-  };
+app.delete('/api/courses/:id', (req, res) => {
+  const course = courses.find((c) => c.id === parseInt(req.params.id));
 
-  rntArrays.push(rnt);
-  res.send(rnt);
+  if (!course)
+    return res.status(404).send('The Object with the givent ID wad not found');
+
+  const index = courses.indexOf(course);
+  courses.splice(index, 1);
+
+  res.send(course);
 });
 
-app.get('/api/rnt/:id', (req, res) => {
-  const rnt = rntArrays.find((c) => c.id === parseInt(req.params.id));
-  if (!rnt) {
-    res.status(404).send('The Object with the givent ID wad not found');
-  }
+app.get('/api/courses/:id', (req, res) => {
+  const course = courses.find((c) => c.id === parseInt(req.params.id));
+  if (!course)
+    return res.status(404).send('The Object with the givent ID wad not found');
 
-  res.send(rnt); // result {"id":1,"name":"tech"}
+  res.send(course); // result {"id":1,"name":"tech"}
 });
 
 app.get('/api/post/:year/:month', (req, res) => {

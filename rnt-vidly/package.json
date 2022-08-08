@@ -1,0 +1,33 @@
+{
+  "name": "rnt-vidly",
+  "version": "1.0.0",
+  "description": "Simple movies RESTful API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rianto-RNT/rnt-nodejs-vidly.git"
+  },
+  "keywords": [
+    "movie",
+    "restful",
+    "api",
+    "node.js",
+    "express.js",
+    "mongodb",
+    "restful",
+    "api"
+  ],
+  "author": "Rianto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rianto-RNT/rnt-nodejs-vidly/issues"
+  },
+  "homepage": "https://github.com/Rianto-RNT/rnt-nodejs-vidly#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "joi": "^13.1.0"
+  }
+}
