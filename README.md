@@ -78,6 +78,8 @@ $ npm start
 - [dotenv](https://github.com/motdotla/dotenv)
 - [helmet](https://github.com/helmetjs/helmet)
 - [morgan](https://github.com/expressjs/morgan)
+- [rc](https://github.com/dominictarr/rc)
+- [config](https://github.com/node-config/node-config)
 - [rnt-example-point](https://github.com/)
 
 ## Development Process
@@ -446,6 +448,8 @@ app.listen(port);
   - NODE_ENV
   - env in running production, testing, staging, or development
 - Configuration
+  - Install config
+  - Implementing config
 - Debugging
 - Templating Engines
 

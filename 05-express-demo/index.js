@@ -1,3 +1,4 @@
+const config = require('config');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const Joi = require('joi');
@@ -19,6 +20,11 @@ app.use(express.static('public'));
 // Middleware third-party
 app.use(logger);
 app.use(helmet());
+
+// Configuration
+console.log(`Aplication Name: ${config.get('name')}`);
+console.log(`Mail Server: ${config.get('mail.host')}`);
+console.log('Mail Password:' + config.get('mail.password'));
 
 // tell application is running in development/testing/staging/production.
 if (app.get('env') === 'development') {
