@@ -76,6 +76,8 @@ $ npm start
 - [prettier](https://github.com/prettier/prettier)
 - [joi](https://github.com/sideway/joi)
 - [dotenv](https://github.com/motdotla/dotenv)
+- [helmet](https://github.com/helmetjs/helmet)
+- [morgan](https://github.com/expressjs/morgan)
 - [rnt-example-point](https://github.com/)
 
 ## Development Process
@@ -429,7 +431,25 @@ app.listen(port);
 
 - You should never trust data sent by the client. Always validate! Use Joi package to perform input validation.
 
-### 6) Vidly RESTful API Application
+### 5) Express Advanced Topic
+
+- Middleware
+- Creating custom middleware
+- Build-in Midlleware
+  - express.static
+  - express.json
+  - express.urlencoded
+- Third-party midleware
+  - Helmet
+  - Morgan
+- Environtments
+  - NODE_ENV
+  - env in running production, testing, staging, or development
+- Configuration
+- Debugging
+- Templating Engines
+
+### Vidly RESTful API Application
 
 - Setup application
 
@@ -454,6 +474,8 @@ $ touch server.js
 - [underscore-js-contains](https://underscorejs.org/#containsl)
 - [about-semantic-versioning](https://docs.npmjs.com/about-semantic-versioning)
 - [express-api-reference-request](https://expressjs.com/en/4x/api.html#req)
+- [express-using-middleware](http://expressjs.com/en/guide/using-middleware.html#using-middleware)
+- [express-Third-party-middleware](http://expressjs.com/en/guide/using-middleware.html#middleware.third-party)
 - [rnt-example-point](https://github.com)
 
 ## Future Updates

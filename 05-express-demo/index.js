@@ -1,9 +1,32 @@
+const morgan = require('morgan');
+const helmet = require('helmet');
 const Joi = require('joi');
+
+const logger = require('./logger');
+
 const express = require('express');
 const app = express();
 
-app.use(express.json());
+// Environtments
+// console.log(`NODE_ENV===>>>: ${process.env.NODE_ENV}`);
+// console.log(`App: ${app.get('env')}`);
 
+// Midleware Build-in
+app.use(express.json());
+app.use(express.urlencoded({ extends: true }));
+app.use(express.static('public'));
+
+// Middleware third-party
+app.use(logger);
+app.use(helmet());
+
+// tell application is running in development/testing/staging/production.
+if (app.get('env') === 'development') {
+  app.use(morgan('tiny'));
+  console.log('Morgan enabeled...');
+}
+
+// list of courses
 const courses = [
   { id: 1, name: 'tech' },
   { id: 2, name: 'software' },
