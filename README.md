@@ -469,6 +469,7 @@ app.listen(port);
 - Named function to rescue
 - Promises
 - Replacing Callbacks with Promises
+- Consuming Promises
 
 ### Vidly RESTful API Application
 

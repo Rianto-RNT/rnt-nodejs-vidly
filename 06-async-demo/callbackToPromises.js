@@ -1,11 +1,20 @@
 console.log("Before");
-getUser(1, (user) => {
-  getRepositories(user.gitHubUsername, (repos) => {
-    getCommits(repos[0], (commits) => {
-      console.log(commits);
-    });
-  });
-});
+// // Callback Hell
+// getUser(1, (user) => {
+//   getRepositories(user.gitHubUsername, (repos) => {
+//     getCommits(repos[0], (commits) => {
+//       console.log(commits);
+//     });
+//   });
+// });
+
+// Promises
+getUser(1)
+  .then((user) => getRepositories(user.gitHubUsername))
+  .then((repos) => getCommits(repos[0]))
+  .then((commits) => console.log("Commits", commits))
+  .catch((err) => console.log("Error", err.message));
+
 console.log("After");
 
 function getUser(id) {
@@ -13,7 +22,7 @@ function getUser(id) {
     // kick off some async work
     setTimeout(() => {
       console.log("Reading a user from a database...");
-      resolve({ id: id, gitHubUsername: "mosh" });
+      resolve({ id: id, gitHubUsername: "Rianto-RNT" });
     }, 2000);
   });
 }
