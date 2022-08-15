@@ -466,6 +466,7 @@ app.listen(port);
 - Pattern for dealing with asynchronous code
 - Callbacks
 - Callback Hell
+- Named function to rescue
 
 ### Vidly RESTful API Application
 
