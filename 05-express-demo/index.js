@@ -1,3 +1,6 @@
+const startupDebugger = require('debug')('app:startup');
+const dbDebugger = require('debug')('app:db');
+
 const config = require('config');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -29,8 +32,11 @@ console.log('Mail Password:' + config.get('mail.password'));
 // tell application is running in development/testing/staging/production.
 if (app.get('env') === 'development') {
   app.use(morgan('tiny'));
-  console.log('Morgan enabeled...');
+  startupDebugger('Morgan enabeled...');
 }
+
+//DB works..
+dbDebugger('Connected to the database...');
 
 // list of courses
 const courses = [
