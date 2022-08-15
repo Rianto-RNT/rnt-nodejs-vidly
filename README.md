@@ -470,6 +470,7 @@ app.listen(port);
 - Promises
 - Replacing Callbacks with Promises
 - Consuming Promises
+- Creating settled Promises
 
 ### Vidly RESTful API Application
 
