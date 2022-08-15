@@ -463,7 +463,7 @@ app.listen(port);
 ### 6) Asynchronous in Javascript
 
 - Synchronous vs asynchronous code
--
+- Pattern for dealing with asynchronous code
 
 ### Vidly RESTful API Application
 
