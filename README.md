@@ -460,6 +460,11 @@ app.listen(port);
   - static(): to serve static ﬁles
   - You can create custom middleware for cross-cutting concerns, such as logging, authentication, etc
 
+### 6) Asynchronous in Javascript
+
+- Synchronous vs asynchronous code
+-
+
 ### Vidly RESTful API Application
 
 - Setup application
@@ -472,7 +477,7 @@ $ npm i express joi@13.1.0
 $ touch server.js
 ```
 
-- rnt-vidly app - restructure the routes
+- rnt-vidly app - restructure/refactor the routes
 
 ### number) rnt-example-point
 
