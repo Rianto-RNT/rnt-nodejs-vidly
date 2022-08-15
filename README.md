@@ -468,6 +468,7 @@ app.listen(port);
 - Callback Hell
 - Named function to rescue
 - Promises
+- Replacing Callbacks with Promises
 
 ### Vidly RESTful API Application
 
