@@ -474,6 +474,21 @@ app.listen(port);
 - Running parallel promisses
 - Async and Await
 
+### 7) Operations Using MongoDB
+
+- Introduction to mongodb
+- Installing mongodb in our machine
+- Connecting to mongodb
+- Schema
+  - Type
+    - String
+    - Number
+    - Date
+    - Buffer
+    - Boolean
+    - ObjectId
+    - Array
+
 ### Vidly RESTful API Application
 
 - Setup application
