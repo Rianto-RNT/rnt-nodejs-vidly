@@ -1,11 +1,17 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config({ path: "./.env" });
 
 mongoose
-  .connect("mongodb://localhost:27017/rnt-playground")
-  .then(() => console.log("Connected to MongoDB locally..."))
-  .catch((err) => console.log("Could not connect to mongodb...", err));
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log(`MongoDB Locally. Connected...`))
+  .catch((err) => console.log("MongoDB Local Connection error...", err));
 
-const courseSchema = new mongoose.Schema({
+const CourseSchema = new mongoose.Schema({
   name: String,
   author: String,
   tags: [String],
@@ -14,4 +20,13 @@ const courseSchema = new mongoose.Schema({
     default: Date.now,
   },
   isPublished: Boolean,
+});
+
+const Course = mongoose.model("Course", CourseSchema);
+
+const course = new Course({
+  name: "Node.js",
+  author: "Rianto",
+  tags: ["node", "backend"],
+  isPublished: true,
 });
