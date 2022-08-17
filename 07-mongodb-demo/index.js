@@ -110,10 +110,23 @@ async function getCoursesFive() {
   console.log(course);
 }
 
+async function getCoursesSix() {
+  const pageNumber = 2;
+  const pageSize = 10;
+
+  const course = await Course.find({ author: "Rianto", isPublished: true })
+    .skip((pageNumber - 1) * pageSize)
+    .limit(pageSize)
+    .sort({ name: -1 })
+    .select({ name: 1, tags: 1 });
+  console.log(course);
+}
+
 // createCourse();
 // getAllCourse();
 // getCoursesOne();
 // getCoursesTwo();
 // getCoursesThree();
 // getCoursesFour();
-getCoursesFive();
+// getCoursesFive();
+getCoursesSix();
