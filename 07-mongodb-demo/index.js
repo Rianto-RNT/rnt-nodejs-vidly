@@ -36,12 +36,20 @@ async function createCourse() {
   console.log(result);
 }
 
-async function getCourses() {
+async function getAllCourse() {
   const course = await Course.find();
   console.log(course);
 }
 
-async function getCourse() {
+async function getCoursesOne() {
+  const course = await Course.find({ author: "Rianto", isPublished: true })
+    .limit(10)
+    .sort({ name: -1 })
+    .select({ name: 1, tags: 1 });
+  console.log(course);
+}
+
+async function getCoursesTwo() {
   // LOGICAL OPERATOR
   // or
   // and
@@ -65,7 +73,7 @@ async function getCourse() {
 // lte (less than or equal to)
 // in
 // nin (not in)
-async function getCourse() {
+async function getCoursesThree() {
   const course = await Course
     // .find({ price: { $gte: 10, $lte: 20 } })
     .find({ price: { $in: [10, 15, 20] } }) // multiple value using an array
@@ -75,6 +83,28 @@ async function getCourse() {
   console.log(course);
 }
 
+async function getCoursesFour() {
+  const course = await Course
+    // .find({ author: "Rianto", isPublished: true })
+
+    // REGULAR EXPRESSIONS
+    // Starts with Rian
+    .find({ author: /^Rian/ })
+
+    // End with RNT
+    .find({ author: /RNT$/i })
+
+    // Contain Rian word
+    .find({ author: /.*Rian.*/ })
+    .limit(10)
+    .sort({ name: -1 })
+    .select({ name: 1, tags: 1 });
+  console.log(course);
+}
+
 // createCourse();
-// getCourses();
-getCourse();
+// getAllCourse();
+// getCoursesOne();
+// getCoursesTwo();
+// getCoursesThree();
+getCoursesFour();

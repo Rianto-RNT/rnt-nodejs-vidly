@@ -493,6 +493,7 @@ app.listen(port);
 - Querying Documents
 - Comparison query operators
 - Logical query operators
+- Regular Expression (Regex)
 
 ### Vidly RESTful API Application
 
@@ -523,6 +524,7 @@ $ touch server.js
 - [express-api-reference-request](https://expressjs.com/en/4x/api.html#req)
 - [express-using-middleware](http://expressjs.com/en/guide/using-middleware.html#using-middleware)
 - [express-Third-party-middleware](http://expressjs.com/en/guide/using-middleware.html#middleware.third-party)
+- [javascript-regular-expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [rnt-example-point](https://github.com)
 
 ## Future Updates
