@@ -492,6 +492,7 @@ app.listen(port);
 - Saving a Doucument
 - Querying Documents
 - Comparison query operators
+- Logical query operators
 
 ### Vidly RESTful API Application
 

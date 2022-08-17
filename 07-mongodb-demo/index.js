@@ -42,7 +42,14 @@ async function getCourses() {
 }
 
 async function getCourse() {
-  const course = await Course.find({ author: "Rianto", isPublished: true })
+  // LOGICAL OPERATOR
+  // or
+  // and
+  const course = await Course
+    // .find({ author: "Rianto", isPublished: true })
+    .find()
+    .or([{ author: "Rianto" }, { isPublished: true }])
+    .and([])
     .limit(10)
     .sort({ name: -1 })
     .select({ name: 1, tags: 1 });
