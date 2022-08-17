@@ -49,6 +49,25 @@ async function getCourse() {
   console.log(course);
 }
 
+// MONGODB KEY VALUE
+// eq (equal)
+// ne (not equal)
+// gt (grater than)
+// gte (greater than pr equal to)
+// lt (less than)
+// lte (less than or equal to)
+// in
+// nin (not in)
+async function getCourse() {
+  const course = await Course
+    // .find({ price: { $gte: 10, $lte: 20 } })
+    .find({ price: { $in: [10, 15, 20] } }) // multiple value using an array
+    .limit(10)
+    .sort({ name: -1 })
+    .select({ name: 1, tags: 1 });
+  console.log(course);
+}
+
 // createCourse();
 // getCourses();
 getCourse();
