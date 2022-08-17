@@ -494,6 +494,7 @@ app.listen(port);
 - Comparison query operators
 - Logical query operators
 - Regular Expression (Regex)
+- Counting
 
 ### Vidly RESTful API Application
 

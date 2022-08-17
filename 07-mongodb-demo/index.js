@@ -102,9 +102,18 @@ async function getCoursesFour() {
   console.log(course);
 }
 
+async function getCoursesFive() {
+  const course = await Course.find({ author: "Rianto", isPublished: true })
+    .limit(10)
+    .sort({ name: -1 })
+    .count();
+  console.log(course);
+}
+
 // createCourse();
 // getAllCourse();
 // getCoursesOne();
 // getCoursesTwo();
 // getCoursesThree();
-getCoursesFour();
+// getCoursesFour();
+getCoursesFive();
