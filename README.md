@@ -496,6 +496,18 @@ app.listen(port);
 - Regular Expression (Regex)
 - Counting
 - Pagination
+- Install MongoDb database tools on PC
+  - To [install](https://www.mongodb.com/try/download/database-tools?tck=docs_databasetools)
+  - Setup path: (mostly C:\Program Files\MongoDB\Tools\[version]\bin)
+- Import json data to collection
+
+```sh
+$ mongoimport --db <database-name> --collection courses --drop --file <file.json-name-or-path-name> --jsonArray
+
+# or
+
+// Add json data to collection using mongo commpass manually
+```
 
 ### Vidly RESTful API Application
 
@@ -527,6 +539,7 @@ $ touch server.js
 - [express-using-middleware](http://expressjs.com/en/guide/using-middleware.html#using-middleware)
 - [express-Third-party-middleware](http://expressjs.com/en/guide/using-middleware.html#middleware.third-party)
 - [javascript-regular-expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [mongodb-Installing-the-Database-Tools-on-Windows](https://www.mongodb.com/docs/database-tools/installation/installation-windows/)
 - [rnt-example-point](https://github.com)
 
 ## Future Updates

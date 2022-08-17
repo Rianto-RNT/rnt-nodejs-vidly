@@ -1,0 +1,7 @@
+mongoimport --db mongo-exercises --collection courses --drop --file exercise-data.json --jsonArray
+
+#EXERCISE
+1. GET all the published backend course
+2. SORT by name
+3. Pick only name and author
+4. And display the data in the console
