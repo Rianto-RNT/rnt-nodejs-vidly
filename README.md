@@ -500,6 +500,7 @@ app.listen(port);
   - To [install](https://www.mongodb.com/try/download/database-tools?tck=docs_databasetools)
   - Setup path: (mostly C:\Program Files\MongoDB\Tools\[version]\bin)
 - Import json data to collection
+- Get Array data from database collection
 
 ```sh
 $ mongoimport --db <database-name> --collection courses --drop --file <file.json-name-or-path-name> --jsonArray
