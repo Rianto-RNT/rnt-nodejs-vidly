@@ -474,7 +474,7 @@ app.listen(port);
 - Running parallel promisses
 - Async and Await
 
-### 7) Operations Using MongoDB
+### 7) CRUD Operations Using MongoDB
 
 - Introduction to mongodb
 - Installing mongodb in our machine
@@ -488,6 +488,8 @@ app.listen(port);
     - Boolean
     - ObjectId
     - Array
+- Models
+- Saving a Doucument
 
 ### Vidly RESTful API Application
 
