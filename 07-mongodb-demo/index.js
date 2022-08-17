@@ -36,4 +36,19 @@ async function createCourse() {
   console.log(result);
 }
 
-createCourse();
+async function getCourses() {
+  const course = await Course.find();
+  console.log(course);
+}
+
+async function getCourse() {
+  const course = await Course.find({ author: "Rianto", isPublished: true })
+    .limit(10)
+    .sort({ name: -1 })
+    .select({ name: 1, tags: 1 });
+  console.log(course);
+}
+
+// createCourse();
+// getCourses();
+getCourse();

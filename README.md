@@ -490,6 +490,7 @@ app.listen(port);
     - Array
 - Models
 - Saving a Doucument
+- Querying Documents
 
 ### Vidly RESTful API Application
 
