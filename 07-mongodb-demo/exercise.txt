@@ -1,7 +1,17 @@
 mongoimport --db mongo-exercises --collection courses --drop --file exercise-data.json --jsonArray
 
-#EXERCISE
+#EXERCISE 1
 1. GET all the published backend course
 2. SORT by name
 3. Pick only name and author
 4. And display the data in the console
+
+#EXERCISE 2
+1. GET All the published frontend and backend courses
+2. Sort them by their in a desc order
+3. pick only their name and author
+4. Display the data
+
+#EXERCISE 3
+1. GET All the published courses that are $15 or more,
+2. or have the word 'by' in their title
