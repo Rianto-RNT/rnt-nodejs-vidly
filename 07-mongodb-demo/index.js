@@ -11,6 +11,7 @@ mongoose
   .then(() => console.log(`MongoDB Locally. Connected...`))
   .catch((err) => console.log("MongoDB Local Connection error...", err));
 
+// SCHEMA FOR MONGO-PLAYGROUND
 const CourseSchema = new mongoose.Schema({
   name: String,
   author: String,
@@ -21,6 +22,19 @@ const CourseSchema = new mongoose.Schema({
   },
   isPublished: Boolean,
 });
+
+// // SCHEMA FOR MONGO-EXERCISE
+// const CourseSchema = new mongoose.Schema({
+//   name: String,
+//   author: String,
+//   tags: [String],
+//   price: Number,
+//   date: {
+//     type: Date,
+//     default: Date.now,
+//   },
+//   isPublished: Boolean,
+// });
 
 const Course = mongoose.model("Course", CourseSchema);
 
@@ -122,6 +136,19 @@ async function getCoursesSix() {
   console.log(course);
 }
 
+async function updateCourse(id) {
+  const course = await Course.findByIdAndUpdate(id);
+  if (!course) return;
+
+  course.isPublished = true;
+  course.author = "Another-author";
+
+  const result = await course.save();
+  console.log(result);
+}
+
+updateCourse("62fc844122d90aa22bb61032");
+
 // createCourse();
 // getAllCourse();
 // getCoursesOne();
@@ -129,4 +156,4 @@ async function getCoursesSix() {
 // getCoursesThree();
 // getCoursesFour();
 // getCoursesFive();
-getCoursesSix();
+// getCoursesSix();
