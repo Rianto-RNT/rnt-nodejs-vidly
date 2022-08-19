@@ -501,6 +501,8 @@ app.listen(port);
   - Setup path: (mostly C:\Program Files\MongoDB\Tools\[version]\bin)
 - Import json data to collection
 - Get Array data from database collection
+- Updating Document - query first
+- Updating document - update first
 
 ```sh
 $ mongoimport --db <database-name> --collection courses --drop --file <file.json-name-or-path-name> --jsonArray
@@ -541,6 +543,7 @@ $ touch server.js
 - [express-Third-party-middleware](http://expressjs.com/en/guide/using-middleware.html#middleware.third-party)
 - [javascript-regular-expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [mongodb-Installing-the-Database-Tools-on-Windows](https://www.mongodb.com/docs/database-tools/installation/installation-windows/)
+- [mongodb-update-operators](https://www.mongodb.com/docs/manual/reference/operator/update/)
 - [rnt-example-point](https://github.com)
 
 ## Future Updates

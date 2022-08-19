@@ -137,14 +137,18 @@ async function getCoursesSix() {
 }
 
 async function updateCourse(id) {
-  const course = await Course.findByIdAndUpdate(id);
-  if (!course) return;
+  const course = await Course.findByIdAndUpdate(
+    id,
+    {
+      $set: {
+        author: "Rianto",
+        isPublished: false,
+      },
+    },
+    { new: true }
+  );
 
-  course.isPublished = true;
-  course.author = "Another-author";
-
-  const result = await course.save();
-  console.log(result);
+  console.log(course);
 }
 
 updateCourse("62fc844122d90aa22bb61032");
