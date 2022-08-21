@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const express = require('express');
 
 const genres = require('./routes/genres');
+const customers = require('./routes/customers');
 
 // Load env vars
 dotenv.config({ path: './.env' });
@@ -41,6 +42,7 @@ app.use(morgan('dev'));
 
 // Routes
 app.use('/api/genres', genres);
+app.use('/api/customers', customers);
 
 // SERVER Development
 const PORT = process.env.PORT || 3000;
