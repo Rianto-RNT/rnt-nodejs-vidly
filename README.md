@@ -611,6 +611,57 @@ const course = await Course.ﬁndByIdAndRemove(id);
 - custom validators
 - Validation errors
 - SchemaType Options
+- RECAP
+- When deﬁning a schema, you can set the type of a property to a SchemaType object. You use this object to deﬁne the validation requirements for the given property.
+
+```sh
+// Adding validation
+new mongoose.Schema({
+    name: { type: String, required: true }
+})
+```
+
+- Validation logic is executed by Mongoose prior to saving a document to the database. You can also trigger it manually by calling the validate() method.
+- Built-in validators:
+- Strings: minlength, maxlength, match, enum
+- Numbers: min, max
+- Dates: min, max
+- All types: required
+
+```sh
+// Custom validation
+tags: [
+     type: Array,
+     validate: {
+         validator: function(v) { return v && v.length > 0; },
+         message: ‘A course should have at least 1 tag.’
+     }
+]
+```
+
+- If you need to talk to a database or a remote service to perform the validation, you need to create an async validator:
+
+```sh
+validate: {
+  isAsync: true
+  validator: function(v, callback) {
+       // Do the validation, when the result is ready, call the callback
+       callback(isValid);
+  }
+}
+```
+
+- Other useful SchemaType properties:
+  - Strings: lowercase, uppercase, trim
+  - All types: get, set >>> to deﬁne a custom getter/setter
+
+```sh
+    price: {
+         type: Number,
+         get: v => Math.round(v),
+         set: v => Math.round(v)
+    }
+```
 
 ### Vidly RESTful API Application
 
@@ -627,6 +678,7 @@ $ touch server.js
 - rnt-vidly app - restructure/refactor the routes
 - Add presistance to genre API
 - Build the Customers API
+- Restructuring the project
 
 ### number) rnt-example-point
 
@@ -665,3 +717,7 @@ Please enjoy and feel free to share your opinion, constructive criticism, or com
 # Acknowledgement
 
 - This project is part of the online course I've taken at Udemy. Thanks to Mosh Hamedani! for creating this awesome course! Link to the course: [Node.js: The Complete Guide to Build RESTful APIs (2018)](https://www.udemy.com/course/nodejs-master-class/?utm_source=adwords&utm_medium=udemyads&utm_campaign=LongTail_la.EN_cc.ROW&utm_content=deal4584&utm_term=_._ag_77879424134_._ad_535397245863_._kw__._de_c_._dm__._pl__._ti_dsa-1007766171312_._li_20445_._pd__._&matchtype=&gclid=CjwKCAjw3K2XBhAzEiwAmmgrAtqKObI5qAyb5Yqut6WOgQReetC1WiFjiOAdJiQ644bCR48C9hsRAxoCZscQAvD_BwE)
+
+```
+
+```
