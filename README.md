@@ -80,6 +80,7 @@ $ npm start
 - [morgan](https://github.com/expressjs/morgan)
 - [rc](https://github.com/dominictarr/rc)
 - [config](https://github.com/node-config/node-config)
+- [colors](https://github.com/Marak/colors.js)
 - [rnt-example-point](https://github.com/)
 
 ## Development Process
@@ -624,6 +625,7 @@ $ touch server.js
 ```
 
 - rnt-vidly app - restructure/refactor the routes
+- Add presistance to genre API
 
 ### number) rnt-example-point
 
