@@ -626,6 +626,7 @@ $ touch server.js
 
 - rnt-vidly app - restructure/refactor the routes
 - Add presistance to genre API
+- Build the Customers API
 
 ### number) rnt-example-point
 
