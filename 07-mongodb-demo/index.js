@@ -13,7 +13,10 @@ mongoose
 
 // SCHEMA FOR MONGO-PLAYGROUND
 const CourseSchema = new mongoose.Schema({
-  name: String,
+  name: {
+    type: String,
+    required: true,
+  },
   author: String,
   tags: [String],
   date: {

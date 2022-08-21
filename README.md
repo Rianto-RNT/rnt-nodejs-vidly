@@ -603,6 +603,14 @@ const result = await Course.deleteMany({ _id: id });
 const course = await Course.ﬁndByIdAndRemove(id);
 ```
 
+### 8) Mongoose Data Validation
+
+- Validation
+- Build-in Validators
+- custom validators
+- Validation errors
+- SchemaType Options
+
 ### Vidly RESTful API Application
 
 - Setup application
