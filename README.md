@@ -668,6 +668,7 @@ validate: {
 - Modelling relationships
 - Referencing document
 - Population
+- Embedding documents
 
 ### Vidly RESTful API Application
 
