@@ -663,6 +663,12 @@ validate: {
     }
 ```
 
+### 8) Mongoose - Modeling Relationships Between Connected Data
+
+- Modelling relationships
+- Referencing document
+-
+
 ### Vidly RESTful API Application
 
 - Setup application
