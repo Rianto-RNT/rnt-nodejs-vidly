@@ -7,6 +7,7 @@ const express = require('express');
 const movies = require('./routes/movies');
 const customers = require('./routes/customers');
 const genres = require('./routes/genres');
+const rentals = require('./routes/rentals');
 
 // Load env vars
 dotenv.config({ path: './.env' });
@@ -45,6 +46,7 @@ app.use(morgan('dev'));
 app.use('/api/genres', genres);
 app.use('/api/customers', customers);
 app.use('/api/movies', movies);
+app.use('/api/rentals', rentals);
 
 // SERVER Development
 const PORT = process.env.PORT || 3000;

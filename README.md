@@ -81,6 +81,7 @@ $ npm start
 - [rc](https://github.com/dominictarr/rc)
 - [config](https://github.com/node-config/node-config)
 - [colors](https://github.com/Marak/colors.js)
+- [fawn](https://github.com/e-oj/Fawn)
 - [rnt-example-point](https://github.com/)
 
 ## Development Process
@@ -687,6 +688,7 @@ $ touch server.js
 - Add presistance to genre API
 - Build the Customers API
 - Restructuring the project and custom validator
+- Transaction
 
 ### number) rnt-example-point
 

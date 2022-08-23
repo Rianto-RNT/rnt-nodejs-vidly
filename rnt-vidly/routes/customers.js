@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const validate = require('../middlewares/validator/index');
-const { Customer } = require('../models/Customer');
+const Customer = require('../models/Customer');
 
 router.get('/', async (req, res) => {
   const customers = await Customer.find().sort('name');
