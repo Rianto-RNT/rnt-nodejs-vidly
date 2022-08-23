@@ -669,6 +669,7 @@ validate: {
 - Referencing document
 - Population
 - Embedding documents
+- Using an Array of Sub-documents
 
 ### Vidly RESTful API Application
 
