@@ -1,8 +1,10 @@
-const { Movie, validate } = require('../models/movie');
-const { Genre } = require('../models/genre');
-const mongoose = require('mongoose');
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
+
+const validate = require('../middlewares/validator/index');
+const { Movie } = require('../models/movie');
+const { Genre } = require('../models/genre');
 
 router.get('/', async (req, res) => {
   const movies = await Movie.find().sort('name');

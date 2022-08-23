@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { Genre, validate } = require('../models/Genre');
+const validate = require('../middlewares/validator/index');
+const { Genre } = require('../models/Genre');
 
 router.get('/', async (req, res) => {
   const genres = await Genre.find().sort('name');
