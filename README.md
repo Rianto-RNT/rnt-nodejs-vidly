@@ -82,6 +82,7 @@ $ npm start
 - [config](https://github.com/node-config/node-config)
 - [colors](https://github.com/Marak/colors.js)
 - [fawn](https://github.com/e-oj/Fawn)
+- [joi-objectid](https://github.com/mkg20001/joi-objectid)
 - [rnt-example-point](https://github.com/)
 
 ## Development Process
@@ -689,6 +690,8 @@ $ touch server.js
 - Build the Customers API
 - Restructuring the project and custom validator
 - Transaction
+- ObjectID (Explaination)
+- Validating Object IDs
 
 ### number) rnt-example-point
 
