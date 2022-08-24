@@ -26,7 +26,7 @@ exports.getGenre = async (req, res) => {
 exports.createGenre = async (req, res) => {
   try {
     const genre = await Genre.create({ name: req.body.name });
-    res.status(200).json({ count: data.length, data: genre });
+    res.status(200).json({ success: true, data: genre });
   } catch (error) {
     return res.status(400).send(error.message);
   }
