@@ -1,6 +1,6 @@
 const Customer = require('../models/Customer');
 
-const validate = require('../middlewares/validator/index');
+// const validate = require('../middlewares/validator/index');
 
 // @desc    Get All Customer
 // @route   GET /api/v1/customer
@@ -28,8 +28,8 @@ exports.getCustomer = async (req, res) => {
 // @route   POST /api/v1/customer
 // @access  Private/Admin
 exports.createCustomer = async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // const { error } = validate(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
 
   const { name, phone, isGold } = req.body;
   const customer = new Customer({ name, phone, isGold });
@@ -42,8 +42,8 @@ exports.createCustomer = async (req, res) => {
 // @route   PUT /api/v1/customer
 // @access  Private/Admin
 exports.updateCustomer = async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // const { error } = validate(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
 
   const { name, phone, isGold } = req.body;
   const customer = await Customer.findByIdAndUpdate(

@@ -1,7 +1,5 @@
 const Genre = require('../models/Genre');
 
-const validate = require('../middlewares/validator/index');
-
 // @desc    Get All Genre
 // @route   GET /api/v1/genres
 // @access  Public
@@ -26,8 +24,8 @@ exports.getGenre = async (req, res) => {
 // @route   POST /api/v1/genres
 // @access  Private/Admin
 exports.createGenre = async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // const { error } = Validator(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
 
   const genre = new Genre({ name: req.body.name });
   await genre.save();
@@ -39,8 +37,8 @@ exports.createGenre = async (req, res) => {
 // @route   PUT /api/v1/genres
 // @access  Private/Admin
 exports.updateGenre = async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // const { error } = validate(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
 
   const genre = await Genre.findByIdAndUpdate(
     req.params.id,

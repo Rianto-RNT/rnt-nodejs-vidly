@@ -5,7 +5,7 @@ const Rental = require('../models/Rental');
 const Movie = require('../models/Movie');
 const Customer = require('../models/Customer');
 
-const validate = require('../middlewares/validator/index');
+// const validate = require('../middlewares/validator/index');
 
 // mongoose.connect(process.env.MONGO_URI);
 // Fawn.init(mongoose);
@@ -34,8 +34,8 @@ exports.getRental = async (req, res) => {
 // @route   POST /api/v1/rentals
 // @access  Private/Admin
 exports.createRental = async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // const { error } = validate(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
 
   if (mongoose.Types.ObjectId.isValid(req.body.customerId))
     return res.status(400).send('Invalid customer.');

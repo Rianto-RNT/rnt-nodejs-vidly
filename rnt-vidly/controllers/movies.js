@@ -1,8 +1,6 @@
 const Movie = require('../models/Movie');
 const Genre = require('../models/Genre');
 
-const validate = require('../middlewares/validator/index');
-
 // @desc    Get All Movie
 // @route   GET /api/v1/movies
 // @access  Public
@@ -27,8 +25,8 @@ exports.getMovie = async (req, res) => {
 // @route   POST /api/v1/movies
 // @access  Private/Admin
 exports.createMovie = async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // const { error } = validate(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
 
   const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send('Invalid genre.');
@@ -51,8 +49,8 @@ exports.createMovie = async (req, res) => {
 // @route   PUT /api/v1/movies
 // @access  Private/Admin
 exports.updateMovie = async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // const { error } = validate(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
 
   const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send('Invalid genre.');
