@@ -24,13 +24,12 @@ exports.getGenre = async (req, res) => {
 // @route   POST /api/v1/genres
 // @access  Private/Admin
 exports.createGenre = async (req, res) => {
-  // const { error } = Validator(req.body);
-  // if (error) return res.status(400).send(error.details[0].message);
-
-  const genre = new Genre({ name: req.body.name });
-  await genre.save();
-
-  res.send(genre);
+  try {
+    const genre = await Genre.create({ name: req.body.name });
+    res.status(200).json({ count: data.length, data: genre });
+  } catch (error) {
+    return res.status(400).send(error.message);
+  }
 };
 
 // @desc    Update Genre

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Connect DB: Cloud
 // eslint-disable-next-line node/no-unsupported-features/es-syntax
 const connectDB = async () => {
   const conn = await mongoose.connect(process.env.MONGO_URI, {
@@ -13,9 +14,9 @@ const connectDB = async () => {
 };
 
 /**   
- // Connect DB Locally
+ // Connect DB: Locally
  const connectDB = async () => {
-  const conn = await mongoose.connect(process.env.MONGO_URI, {
+  const conn = await mongoose.connect(process.env.MONGO_LOCAL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
