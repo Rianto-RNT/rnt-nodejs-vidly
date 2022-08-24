@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const express = require('express');
 
+// Routes
 const movies = require('./routes/movies');
 const customers = require('./routes/customers');
 const genres = require('./routes/genres');
@@ -45,13 +46,13 @@ mongoose
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Routes
-app.use('/api/genres', genres);
-app.use('/api/customers', customers);
-app.use('/api/movies', movies);
-app.use('/api/rentals', rentals);
+// Router
+app.use('/api/v1/genres', genres);
+app.use('/api/v1/customers', customers);
+app.use('/api/v1/movies', movies);
+app.use('/api/v1/rentals', rentals);
 
-// SERVER Development
+// SERVER
 const PORT = process.env.PORT || 3000;
 const server = app.listen(
   PORT,
