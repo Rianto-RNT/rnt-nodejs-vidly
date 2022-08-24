@@ -1,3 +1,6 @@
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi);
+
 const morgan = require('morgan');
 const colors = require('colors');
 const mongoose = require('mongoose');
