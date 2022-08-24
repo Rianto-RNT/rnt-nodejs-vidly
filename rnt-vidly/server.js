@@ -1,11 +1,10 @@
-const Joi = require('joi');
-Joi.objectId = require('joi-objectid')(Joi);
-
+const express = require('express');
 const morgan = require('morgan');
 const colors = require('colors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const express = require('express');
+
+const connectDB = require('./config/db');
 
 // Routes
 const movies = require('./routes/movies');
@@ -16,31 +15,10 @@ const rentals = require('./routes/rentals');
 // Load env vars
 dotenv.config({ path: './.env' });
 
+// Connect DB
+connectDB();
+
 const app = express();
-
-// Connect DB Cloud
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log('MongoDB Cloud! Connected...'.green.inverse))
-  .catch((error) =>
-    console.log(`MongoDB Cloud! Failed to connect..., ${error}`.red)
-  );
-
-/**   
-   // Connect DB Locally
-   mongoose
-   .connect(process.env.MONGO_LOCAL, {
-     useNewUrlParser: true,
-     useUnifiedTopology: true,
-    })
-    .then(() => console.log('MongoDB Local! Connected...'.green.inverse))
-    .catch((error) =>
-    console.log(`MongoDB Local! Failed to connect..., ${error}`.red)
-    );
-*/
 
 // Middlewares
 app.use(express.json());
